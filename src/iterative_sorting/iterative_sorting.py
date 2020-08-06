@@ -20,11 +20,19 @@ def selection_sort(arr):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    print('arr: ', arr)
+    print('bubble_sort arr: ', arr)
     # Your code here
-
-
-
+    did_swap = True
+    # Repeats the loop until did_swap stays False
+    while did_swap:
+        # IF we never swap, the loop will end.
+        did_swap = False
+        for i in range(0, len(arr)-1):
+            # Swap if the element found is greater than the next element.
+            if arr[i] > arr[i+1]:
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+                # will cause the loop to repeat
+                did_swap = True
     return arr
 
 '''
